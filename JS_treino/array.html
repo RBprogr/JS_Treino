@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Programador a bordo</title>
+</head>
+<body>
+	<script>
+		var numeros = [5, 3, 12, 17, 10, 99];
+		console.log(numeros);
+
+		console.log(numeros[2]);
+		console.log(numeros[5]);
+		console.log(numeros[0]);
+
+		console.log(numeros.length);
+
+		var numeRetornado = numeros.pop();
+		console.log('numeRetornado',  numeRetornado);
+		console.log(numeros);
+
+		console.log(numeros.slice(2, 5));
+
+		console.log(numeros.slice(3));
+
+		console.log(numeros.join('--'));
+		console.log(numeros.join(' '));
+
+		var usuario = [
+			'Airton',
+			26,
+			'Programador a bordo',
+			2019,
+			'Brasileiro'
+		];
+
+		console.log(usuario);
+
+		usuario.push('RJ');
+
+		console.log(usuario);
+
+		console.log(usuario.includes('Brasileiro'));
+		console.log(usuario.includes('Japonês'));
+		console.log(usuario.includes(2019));
+
+		console.log(usuario.indexOf(2019));
+		console.log(usuario.indexOf('Japonês'));
+
+		var arr1 = [3, 2, 1];
+		var arr2 = ['Programador', 'a', 'bordo'];
+		// [3, 2, 1, 'Programador', 'a', 'bordo']
+		//
+		var resultado = arr2.concat(arr1).concat(['teste',
+			'fulano', 'ciclano']);
+		 // as ordens dos arr1 e arr2 pode ser alteradas
+		console.log(resultado);
+
+		console.log([...arr1,...arr2, ...['teste',
+			'fulano', 'ciclano']]);
+
+		var nome = usuario[0];
+		console.log(nome);
+
+		var idade = usuario[1];
+		var ano = usuario[3];
+
+		console.log(nome, idade, ano);
+
+		var [nome, idade, , , nacionalidade] = usuario;
+		console.log(nome, idade, nacionalidade);
+	</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Escopos e Let</title>
+</head>
+<body>
+	<script>
+		var nome = 'Airton';
+		console.log(nome);
+
+		function imprimeNome() {
+			console.log(nome);
+		}
+
+		imprimeNome();
+
+		function imprimeIdade() {
+			var idade = 27;
+			console.log(idade)
+		}
+
+		imprimeIdade()
+		//console.log(idade)
+
+
+		function imprimePais() {
+			pais = 'Brasil'
+			console.log(pais);
+		}
+
+		imprimePais();
+		console.log(pais)
+		console.log(window.pais)
+		console.log(this.pais)
+
+		function imprimeThis() {
+			console.log('imprimeThis', this);
+		}
+
+		function imprimeMenssagem() {
+			imprimeThis.call({ msg: 'Sou um opjeto' });
+		}
+
+		function imprimeMenssagem2() {
+			imprimeThis.call(['Sou um array']);
+		}
+
+		imprimeMenssagem();
+		imprimeMenssagem2();
+		imprimeThis()
+
+		function usuario() {
+			var nome = 'Airton'
+			return function() {
+				var sobrenome = 'Teshima'
+				console.log(nome, sobrenome)
+			}
+		}
+
+		var user = usuario()
+		user();
+
+		if (true) {
+			var youtube = '@prograadoraordo'
+			let autor = 'Airton';
+			console.log(youtube);
+			//console.log(autor);
+		}
+
+		console.log(youtube);
+		//console.log(autor);
+
+		let sobrenome = 'Teshima';
+		console.log(sobrenome);
+
+		sobrenome = 'Jesus';
+		console.log(sobrenome);
+		{
+		let sobrenome = 'Feliz'
+		console.log(sobrenome);
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

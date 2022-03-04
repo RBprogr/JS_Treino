@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Objects</title>
+</head>
+<body>
+	<script>
+		var usuario = {
+			nome: "Rubens",
+			idade: 26,
+			youtube: 'Programador junior',
+			'ultimo-nome': 'Rodris',
+			competencias: {
+				linguagem: ['JavaScript', 'Python', 'Go', 'Scala', 'PHP'],
+				instrumentosMusicais: ['Guitarra', 'Baixo', 'Bateria']
+		 	}
+		};
+
+		console.log(usuario);
+		console.log(usuario.idade);
+		console.log(usuario.nome);
+		console.log(usuario.youtube);
+		console.log(usuario['ultimo-nome']);
+
+		console.log(usuario ['youtube']);
+
+		usuario.ano = 2019;
+
+		console.log(usuario);
+		console.log(usuario.ano);
+
+		usuario.hobbies = ['Musica', 'Programar', 'Viajar'];
+
+		console.log(usuario);
+
+		var usuario2 = {
+			digaOi: function(name) {
+				return `Ola ${name}`;
+			}
+		};
+
+		console.log(usuario2.digaOi('Airton'));
+		console.log(usuario2.digaOi('Rodris'));
+
+		var cor = 'rosa';
+		var idade = 26;
+		var nome = 'Rubens';
+
+		var usuario3 = {
+			nome,
+			idade,
+			cor
+		};
+		console.log(usuario3);
+
+		var usuario4 = {
+			nome: 'Ayrton',
+			idade: 26
+		};
+
+		var extraInfo = {
+			pais: 'Brasil',
+			estado: 'Rio de Janeiro'
+		};
+  
+		//{
+		//	nome: 'Ayrton',
+		//	idade: 26,
+		//	pais: 'Brasil',
+		//	estado: 'Rio de Janeiro'
+		//}
+
+		var novoUsuario = Object.assign({}, usuario4, extraInfo);
+		console.log(novoUsuario)
+
+		//Object.assign(usuario4, extraInfo);
+		//console.log('usuario4', usuario4)
+		//
+
+		 var novousuario2 = {
+		 	...usuario4,
+		 	...extraInfo,
+		 	sexo: 'M',
+		 	profissao: 'Programador'
+		 	};
+		 
+
+		 // var novoUsuario = oject.asign({}, usuario4 extraInfo);
+
+		 console.log(novousuario2);
+
+		 var nomeVariavel = 'Estado';
+		 var nome = 'lastName';
+
+		 var usuario5 = {
+		 	[nome]: 'Airton',
+		 	[nomeVariavel]: 'Rio de Janeiro'
+		 }
+		 console.log(usuario5);
+
+		 // getters e setters
+		 //
+		 var usuarios = [
+		 {
+		 	nome: 'Airton',
+		 	idade: 26
+		 },
+		 {
+		 	nome: 'João',
+		 	idade: 19
+		 },
+		 {
+		 	nome: 'Maria',
+		 	idadde: 21
+		 }
+		];
+
+		console.log(usuarios[1].idade);
+
+		var usuario = {
+			posicao: 0,
+			get atual(){
+				return usuarios[this.posicao]
+			},
+			set atual(posicao) {
+				this.posicao = posicao;
+			},
+			proximo(){
+				++this.posicao;
+			},
+			anterior() {
+				--this.posicao;
+			}
+
+		};
+
+		 console.log(usuario.atual); // {nome: 'Airton', idade: 26}
+		 usuario.proximo();
+
+		 console.log(usuario.atual); // {ome: 'João', idade: 19}
+
+		 usuario.proximo();
+		 console.log(usuario.atual); // {nome: 'Maria', idade: 21}
+
+		 usuario.anterior();
+		 console.log(usuario.atual); // {nome: 'João', Idade: 19}
+
+		 usuario.atual = 0;
+		 console.log(usuario.atual);  // {nome: 'Airton', idade 26}
+
+		 usuario.atual = 2;
+		 console.log(usuario.atual); // {nome: 'Maria', idade 21}
+
+	</script>
+</body>
+</html>
